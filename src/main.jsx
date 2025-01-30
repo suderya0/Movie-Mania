@@ -1,4 +1,4 @@
-import { Children, StrictMode } from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -9,6 +9,7 @@ import Home from './pages/Home.jsx';
 import Shows from './pages/shows/Shows.jsx';
 import Movies from './pages/movies/Movies.jsx';
 import Search from './pages/search/Search.jsx';
+import DetailsPage from './pages/DetailsPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: '/search',
         element: <Search />,
       },
+      {
+        path: "/:type/:id",
+        element: <DetailsPage />
+      }
     ],
   },
 ]);
